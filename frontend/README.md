@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# Product Showcase & Enquiry Application
+A full-stack e-commerce product showcase application built with React, Node.js, Express, and SQLite. Features product browsing with search/filter capabilities, detailed product views, and a customer enquiry system.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🛠 Tech Stack
+Frontend:
+React 18
+Vanilla CSS (Tailwind-inspired utilities)
+Fetch API for HTTP requests
 
-## Available Scripts
+Backend:
+Node.js
+Express.js
+SQLite3
+CORS middleware
+dotenv for environment variables
 
-In the project directory, you can run:
+Database:
+SQLite (file-based, no separate server needed)
 
-### `npm start`
+## 📁 Project Structure
+```
+product-showcase/
+│
+├── backend/
+│   ├── node_modules/              # Dependencies (auto-generated)
+│   ├── server.js                  # Express server with API routes
+│   ├── db.js                      # Database initialization script
+│   ├── package.json               # Backend dependencies
+│   ├── package-lock.json          # Lock file
+│   └── database.db                # SQLite database (auto-generated)
+│
+└── frontend/
+    ├── node_modules/              # Dependencies (auto-generated)
+    ├── public/
+    ├── src/
+    │   ├── components/
+    │   │   ├── Header.js              # Site header
+    │   │   ├── SearchFilter.js        # Search & category filter
+    │   │   ├── ProductCard.js         # Product card component
+    │   │   ├── ProductGrid.js         # Product grid layout
+    │   │   ├── ProductModal.js        # Product details modal
+    │   │   ├── EnquiryForm.js         # Customer enquiry form
+    │   │   ├── SuccessMessage.js      # Success confirmation
+    │   │   └── Pagination.js          # Pagination controls
+    │   │
+    │   ├── services/
+    │   │   └── api.js                 # API service layer
+    │   │
+    │   ├── App.js                     # Main application component
+    │   ├── App.css                    # Component-specific styles
+    │   ├── index.js                   # React entry point
+    │   └── index.css                  # Global styles & utilities
+    │
+    ├── package.json                   # Frontend dependencies
+    ├── package-lock.json              # Lock file
+    ├── .gitignore                     # Git ignore rules
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Installation & Setup
+1. Clone or Download the Project
+git clone <repository-url>
+cd product-showcase
 
-### `npm run build`
+2. Backend Setup
+   mdkir backend
+   cd backend
+   
+   npm init -y
+   npm install express sqlite3 cors dotenv
+   npm install --save-dev nodemon
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   Initialize Database with Sample Data
+   create db.js
+   npm run db.js -> it will create database.db(sqlite database)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   To Run backend use command:-> npm run dev #backend starts
+   
+  Expected Output
+  ```
+  Server running on http://localhost:3001
+  Connected to SQLite database
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Frontend Setup
+   mkdir frontend
+   cd frontend
+   npx create react app .
+   npm install
+   npm start
+   
+   then create a src/components, src/services
 
-### `npm run eject`
+   Expected Output
+   ```
+   Compiled successfully!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    You can now view product-showcase-frontend in the browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Local:            http://localhost:3000
+    On Your Network:  http://192.168.x.x:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Screenshots
+<img width="1921" height="982" alt="enquiry_api" src="https://github.com/user-attachments/assets/154a6189-4aad-46f2-b498-ae7b15a81299" />
+<img width="1921" height="984" alt="Home_page" src="https://github.com/user-attachments/assets/37c58440-8215-4bba-8d7c-25e1314f0be2" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screen Recording
